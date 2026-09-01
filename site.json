@@ -1,0 +1,48 @@
+{
+  "_type": "siteSettings",
+  "orgName": "Islamic Center of Cedar Rapids",
+  "academyName": "ICCR Academy",
+  "logo": "https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/4ac99bcc-5a6e-461d-8249-915e3621da97/Masjid+logo+3+revised+%281%29.png",
+  "primaryNav": [
+    { "label": "Programs", "href": "programs.html" },
+    { "label": "Curriculum", "href": "curriculum.html" },
+    { "label": "Why ICCRA", "href": "why-iccra.html" },
+    { "label": "Faculty", "href": "faculty.html" },
+    { "label": "Student Life", "href": "student-life.html" },
+    { "label": "Parents & Community", "href": "parents-community.html" },
+    { "label": "Admissions", "href": "admissions.html" }
+  ],
+  "utilityNav": [
+    { "label": "Portal", "href": "https://portal.crmosque.org", "external": true }
+  ],
+  "headerSocial": [
+    { "label": "Instagram", "href": "https://www.instagram.com/crmosque/", "icon": "instagram" },
+    { "label": "Facebook", "href": "https://m.facebook.com/crmosque/#_=_", "icon": "facebook" }
+  ],
+  "footerNav": [
+    { "heading": "Explore", "links": [
+      { "label": "Programs", "href": "programs.html" },
+      { "label": "Curriculum", "href": "curriculum.html" },
+      { "label": "Faculty & Staff", "href": "faculty.html" },
+      { "label": "Student Life", "href": "student-life.html" },
+      { "label": "Admissions", "href": "admissions.html" }
+    ]},
+    { "heading": "Parents & Community", "links": [
+      { "label": "Parent Resources", "href": "parent-resources.html" },
+      { "label": "Parent Handbook", "href": "parent-handbook.html" },
+      { "label": "Community Gatherings", "href": "community-gatherings.html" },
+      { "label": "Volunteering", "href": "volunteering.html" },
+      { "label": "Calendar", "href": "calendar.html" }
+    ]}
+  ],
+  "contact": {
+    "address": "2999 1st Avenue SW, Cedar Rapids, IA 52405",
+    "phone": "(319) 362-0857",
+    "email": "iccra-administrator@crmosque.org"
+  },
+  "social": [
+    { "label": "Facebook", "href": "https://m.facebook.com/crmosque/#_=_" },
+    { "label": "Instagram", "href": "https://www.instagram.com/crmosque/" },
+    { "label": "YouTube", "href": "https://www.youtube.com/channel/UCrNUfszfwVTdT5KE_RpdwKA" }
+  ]
+}

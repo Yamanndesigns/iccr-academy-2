@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions — ICCR Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="admissions">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader"><div id="site-header"></div></header>
+
+<main id="main">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/014f8473-e9f3-478a-a723-13aa60b9e50e/ICCRA_2" alt="">
+    <div class="page-hero-inner reveal">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Admissions</p>
+      <h1>Admissions, handled personally</h1>
+      <p class="page-hero-lead">Admissions are open now for the current school year. Reach out, visit, or apply — whatever step makes sense for your family right now.</p>
+    </div>
+  </section>
+
+  <section id="apply" style="padding-top: var(--section-pad);">
+    <div class="admission-actions reveal">
+      <article class="action-card">
+        <h3>Request Information</h3>
+        <p>Not ready to apply yet? Send us a note and our admissions coordinator will follow up with grade availability, next steps, and anything else you're wondering about.</p>
+        <a href="mailto:iccra-administrator@crmosque.org?subject=Request%20for%20Information" class="btn btn-outline">Request Info</a>
+      </article>
+      <article class="action-card featured" id="tour">
+        <h3>Schedule a Tour</h3>
+        <p>Visit the Masjid campus, see a class in session, and meet the teachers who'll be working with your child.</p>
+        <a href="mailto:iccra-administrator@crmosque.org?subject=Schedule%20a%20Tour" class="btn btn-white">Schedule a Tour</a>
+      </article>
+      <article class="action-card">
+        <h3>Apply Today</h3>
+        <p>Ready to move forward? Submit the enrollment application along with your student's academic records to begin the process.</p>
+        <a href="mailto:iccra-administrator@crmosque.org?subject=ICCRA%20Application" class="btn btn-outline">Apply Today</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="section-head reveal">
+      <p class="eyebrow">The Process</p>
+      <h2>Five steps from first hello to first day</h2>
+    </div>
+    <ol class="timeline reveal">
+      <li class="timeline-step"><span class="step-index">01</span><div class="step-body"><h3>Inquire</h3><p>Reach out to ICCRA administration to ask questions and confirm seat availability for your student's grade.</p></div></li>
+      <li class="timeline-step"><span class="step-index">02</span><div class="step-body"><h3>Tour &amp; meet</h3><p>Visit the Masjid campus, see a class in session, and meet the teachers who'll be working with your child.</p></div></li>
+      <li class="timeline-step"><span class="step-index">03</span><div class="step-body"><h3>Apply</h3><p>Submit the enrollment application along with your student's academic records and any relevant documentation.</p></div></li>
+      <li class="timeline-step"><span class="step-index">04</span><div class="step-body"><h3>Assessment &amp; conversation</h3><p>A short placement conversation with faculty helps us understand your child's needs and confirm the right fit.</p></div></li>
+      <li class="timeline-step"><span class="step-index">05</span><div class="step-body"><h3>Enroll &amp; orient</h3><p>Complete registration and join a welcome orientation before your student's first day of class.</p></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <p class="eyebrow">Questions First?</p>
+      <h2>A few things families often ask</h2>
+    </div>
+    <div class="faq-list reveal" id="faqPreview"></div>
+    <p class="program-cta reveal" style="margin-top:20px;"><a href="faq.html" class="btn btn-ghost">Read the Full FAQ →</a></p>
+  </section>
+
+  <section class="final-cta">
+    <svg class="cta-star" viewBox="0 0 200 200" aria-hidden="true"><use href="#khatam-star"></use></svg>
+    <div class="final-cta-inner reveal">
+      <p class="eyebrow eyebrow-light">Ready When You Are</p>
+      <h2>Begin your family's journey with ICCR Academy</h2>
+      <div class="hero-actions">
+        <a href="mailto:iccra-administrator@crmosque.org?subject=ICCRA%20Application" class="btn btn-white btn-lg">Apply Today</a>
+        <a href="mailto:iccra-administrator@crmosque.org?subject=Schedule%20a%20Tour" class="btn btn-outline-light btn-lg">Schedule a Tour</a>
+      </div>
+      <div class="final-cta-meta">
+        <span>(319) 362-0857</span><span aria-hidden="true">·</span><span>iccra-administrator@crmosque.org</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><g id="khatam-star"><path d="M100 10 L118 70 L180 55 L134 100 L180 145 L118 130 L100 190 L82 130 L20 145 L66 100 L20 55 L82 70 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></g></defs>
+</svg>
+
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initChrome('admissions');
+  fetch('data/faq.json').then(r => r.json()).then(items => {
+    renderFaq(items.slice(0, 3), '#faqPreview');
+    initReveals();
+  });
+</script>
+</body>
+</html>

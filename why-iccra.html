@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why ICCRA — ICCR Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="why-iccra">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader"><div id="site-header"></div></header>
+
+<main id="main">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/128aadb8-8ad5-48d2-90c6-7f485be6139a/aaasdfghWhatsApp+Image+2024-05-07+at+15.46.12.jpeg" alt="">
+    <div class="page-hero-inner reveal">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Why ICCRA</p>
+      <h1>An education families can trust, in a community that already feels like theirs</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="feature-row reveal">
+      <div class="feature-media"><img src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/128aadb8-8ad5-48d2-90c6-7f485be6139a/aaasdfghWhatsApp+Image+2024-05-07+at+15.46.12.jpeg" alt="ICCR Academy students in a classroom setting"></div>
+      <div class="feature-text">
+        <p class="feature-kicker">01 — Academic Excellence</p>
+        <h3>Rigorous, accredited, and personal</h3>
+        <p>Students follow a fully accredited academic program with live daily instruction — not pre-recorded lessons. Small proctor-supervised groups and one-on-one tutoring in Math, Science, and ELA mean no student gets lost in the crowd.</p>
+      </div>
+    </div>
+    <div class="feature-row feature-row-reverse reveal">
+      <div class="feature-media"><img src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/bf757510-867b-43d0-a718-7e7d0e5552bf/ICCRA_5" alt="Students participating in Islamic studies at the Masjid"></div>
+      <div class="feature-text">
+        <p class="feature-kicker">02 — Islamic Values, Lived Daily</p>
+        <h3>Faith woven into the school day</h3>
+        <p>Islamic studies aren't an add-on period — they're part of the daily rhythm. Qur'an, Arabic, Fiqh, and Tarbiyah are taught inside the Masjid itself, by instructors who model the values they teach.</p>
+      </div>
+    </div>
+    <div class="feature-row reveal">
+      <div class="feature-media"><img src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/7502cad1-073e-4a06-bb0f-38248bd5e6bd/ICCRA_1" alt="ICCR Academy teacher working with students"></div>
+      <div class="feature-text">
+        <p class="feature-kicker">03 — Teachers Who Know Your Child</p>
+        <h3>Small enough to notice everything</h3>
+        <p>Our staff and faculty are drawn from the Masjid community itself. They know students by name, track their progress closely, and treat families as partners rather than spectators.</p>
+      </div>
+    </div>
+    <div class="feature-row feature-row-reverse reveal">
+      <div class="feature-media"><img src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/014f8473-e9f3-478a-a723-13aa60b9e50e/ICCRA_2" alt="Students taking part in an ICCR Academy activity"></div>
+      <div class="feature-text">
+        <p class="feature-kicker">04 — Whole-Child Development</p>
+        <h3>Growing beyond the classroom</h3>
+        <p>Art, physical education, life-skills instruction, field trips, and extracurriculars round out a school day built to develop confident, capable, grounded young people — not just good test scores.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="section-head reveal">
+      <p class="eyebrow">In Their Words</p>
+      <h2>What ICCRA families say</h2>
+    </div>
+    <div class="testimonial-layout reveal">
+      <blockquote class="testimonial-feature" id="testimonialFeature"></blockquote>
+      <div class="testimonial-side" id="testimonialSide"></div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <svg class="cta-star" viewBox="0 0 200 200" aria-hidden="true"><use href="#khatam-star"></use></svg>
+    <div class="final-cta-inner reveal">
+      <p class="eyebrow eyebrow-light">See It Yourself</p>
+      <h2>Meet the people behind ICCRA</h2>
+      <div class="hero-actions">
+        <a href="faculty.html" class="btn btn-white btn-lg">Meet Our Faculty</a>
+        <a href="admissions.html" class="btn btn-outline-light btn-lg">Schedule a Tour</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><g id="khatam-star"><path d="M100 10 L118 70 L180 55 L134 100 L180 145 L118 130 L100 190 L82 130 L20 145 L66 100 L20 55 L82 70 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></g></defs>
+</svg>
+
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initChrome('why-iccra');
+  fetch('data/testimonials.json').then(r => r.json()).then(items => {
+    renderTestimonials(items, '#testimonialFeature', '#testimonialSide');
+    initReveals();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty &amp; Staff — ICCR Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="faculty">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader"><div id="site-header"></div></header>
+
+<main id="main">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/7502cad1-073e-4a06-bb0f-38248bd5e6bd/ICCRA_1" alt="">
+    <div class="page-hero-inner reveal">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Faculty &amp; Staff</p>
+      <h1>The people behind ICCRA</h1>
+      <p class="page-hero-lead">A team of educators, scholars, and administrators — many trained in both Western education and traditional Islamic scholarship. Select a profile to read their full bio.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <p class="eyebrow">Administration</p>
+      <h2>Leading ICCRA day to day</h2>
+    </div>
+    <div class="admin-grid reveal" id="adminGrid"></div>
+
+    <h3 class="subgroup-title reveal">Teaching Faculty</h3>
+    <div class="teacher-grid reveal" id="teacherGrid"></div>
+
+    <div class="committee reveal">
+      <h3 class="subgroup-title" style="padding:0; margin-bottom:20px;">Governing Committee</h3>
+      <ul class="committee-list" id="committeeList"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><g id="khatam-star"><path d="M100 10 L118 70 L180 55 L134 100 L180 145 L118 130 L100 190 L82 130 L20 145 L66 100 L20 55 L82 70 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></g></defs>
+</svg>
+
+<div class="modal-overlay" id="facultyModal">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-photo"></div>
+    <div class="modal-body"><div class="modal-body-content"></div></div>
+  </div>
+</div>
+
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initChrome('faculty');
+  initFacultyModal();
+
+  fetch('data/faculty.json').then(r => r.json()).then(data => {
+    document.getElementById('adminGrid').innerHTML = data.administration.map(p => `
+      <article class="admin-card" tabindex="0" role="button" aria-haspopup="dialog" data-person='${JSON.stringify(p).replace(/'/g, "&apos;")}'>
+        <div class="avatar avatar-lg" aria-hidden="true">${p.initials}</div>
+        <div class="admin-card-body">
+          <h3>${p.name}</h3>
+          <p class="role">${p.role}</p>
+          <p class="bio">${p.bio}</p>
+          <span class="click-hint">View full bio →</span>
+        </div>
+      </article>
+    `).join('');
+
+    document.getElementById('teacherGrid').innerHTML = data.teachers.map(p => `
+      <article class="teacher-card" tabindex="0" role="button" aria-haspopup="dialog" data-person='${JSON.stringify(p).replace(/'/g, "&apos;")}'>
+        <div class="avatar" aria-hidden="true">${p.initials}</div>
+        <h4>${p.name}</h4>
+        <p class="role">${p.role}</p>
+        <p class="bio">${p.credentials || p.bio}</p>
+      </article>
+    `).join('');
+
+    document.getElementById('committeeList').innerHTML = data.committee.map(c => `
+      <li><span class="committee-role">${c.role}</span><span class="committee-name">${c.name}</span></li>
+    `).join('');
+
+    bindFacultyCards();
+    initReveals();
+  });
+</script>
+</body>
+</html>

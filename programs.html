@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs — ICCR Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="programs">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader"><div id="site-header"></div></header>
+
+<main id="main">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/014f8473-e9f3-478a-a723-13aa60b9e50e/ICCRA_2" alt="">
+    <div class="page-hero-inner reveal">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Programs</p>
+      <h1>Two curricula, one education</h1>
+      <p class="page-hero-lead" id="programsIntro">ICCR Academy runs on a blended-learning model: accredited, live online academics taught alongside in-person Islamic studies.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="program-panels reveal" id="programPanels"></div>
+    <p class="program-footnote reveal" style="max-width:var(--max);margin:32px auto 0;padding:0 var(--gutter);text-align:center;color:var(--ink-faint);font-size:.92rem;font-style:italic;" id="gradeRangeNote"></p>
+    <p class="program-cta reveal"><a href="curriculum.html" class="btn btn-outline">View Full Curriculum Detail</a></p>
+  </section>
+
+  <section class="bg-alt">
+    <div class="section-head reveal">
+      <p class="eyebrow">A Day at ICCRA</p>
+      <h2>How the two curricula fit together</h2>
+    </div>
+    <div class="feature-row reveal">
+      <div class="feature-media"><img src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/7502cad1-073e-4a06-bb0f-38248bd5e6bd/ICCRA_1" alt="Students during live online instruction"></div>
+      <div class="feature-text">
+        <p class="feature-kicker">Morning</p>
+        <h3>Live academic instruction</h3>
+        <p>Students log into live, proctor-supervised classes through our accredited academic partner — real teachers, real classmates, in real time.</p>
+      </div>
+    </div>
+    <div class="feature-row feature-row-reverse reveal">
+      <div class="feature-media"><img src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/bf757510-867b-43d0-a718-7e7d0e5552bf/ICCRA_5" alt="Students during Islamic studies at the Masjid"></div>
+      <div class="feature-text">
+        <p class="feature-kicker">Afternoon</p>
+        <h3>In-person Islamic studies</h3>
+        <p>Students transition to the Masjid for Qur'an, Arabic, Fiqh, and Tarbiyah — taught face to face by instructors who know them by name.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <svg class="cta-star" viewBox="0 0 200 200" aria-hidden="true"><use href="#khatam-star"></use></svg>
+    <div class="final-cta-inner reveal">
+      <p class="eyebrow eyebrow-light">Ready to Learn More?</p>
+      <h2>See how it all connects in the full curriculum</h2>
+      <div class="hero-actions">
+        <a href="curriculum.html" class="btn btn-white btn-lg">View Curriculum</a>
+        <a href="admissions.html" class="btn btn-outline-light btn-lg">Start Admissions</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><g id="khatam-star"><path d="M100 10 L118 70 L180 55 L134 100 L180 145 L118 130 L100 190 L82 130 L20 145 L66 100 L20 55 L82 70 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></g></defs>
+</svg>
+
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initChrome('programs');
+  fetch('data/programs.json').then(r => r.json()).then(data => {
+    document.getElementById('programsIntro').textContent = data.intro;
+    document.getElementById('gradeRangeNote').textContent = data.gradeRange;
+    document.getElementById('programPanels').innerHTML = `
+      <article class="program-panel panel-islamic">
+        <p class="panel-kicker">${data.islamic.kicker}</p>
+        <h3>${data.islamic.title}</h3>
+        <p class="panel-intro">${data.islamic.summary}</p>
+        <ul class="panel-list">${data.islamic.subjects.map(s => `<li>${s}</li>`).join('')}</ul>
+      </article>
+      <article class="program-panel panel-academic">
+        <p class="panel-kicker">${data.academic.kicker}</p>
+        <h3>${data.academic.title}</h3>
+        <p class="panel-intro">${data.academic.summary}</p>
+        <ul class="panel-list">${data.academic.subjects.map(s => `<li>${s}</li>`).join('')}</ul>
+      </article>
+    `;
+    initReveals();
+  });
+</script>
+</body>
+</html>

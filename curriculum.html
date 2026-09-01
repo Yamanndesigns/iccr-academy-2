@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum — ICCR Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .band-list { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-direction: column; gap: 2px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); }
+  .band-row { display: grid; grid-template-columns: 0.55fr 1fr 1fr; background: var(--white); }
+  .band-row:nth-child(even) { background: var(--paper-alt); }
+  .band-head { padding: 28px; border-right: 1px solid var(--line); }
+  .band-head .range { font-family: var(--font-display); font-size: 1.3rem; color: var(--teal-deep); margin-bottom: 4px; }
+  .band-head .title { color: var(--ink-faint); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .band-col { padding: 28px; border-right: 1px solid var(--line); }
+  .band-col:last-child { border-right: none; }
+  .band-col .label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+  .band-col p { color: var(--ink-soft); font-size: 0.92rem; }
+  @media (max-width: 900px) { .band-row { grid-template-columns: 1fr; } .band-head, .band-col { border-right: none; border-bottom: 1px solid var(--line); } }
+
+  .advanced-track { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .advanced-intro { max-width: 70ch; color: var(--ink-soft); margin-bottom: 40px; }
+  .subject-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .subject-card { background: var(--teal-deep); color: var(--paper); border-radius: var(--radius-md); padding: 30px 26px; }
+  .subject-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--gold-soft); }
+  .subject-card p { color: rgba(248,245,238,0.8); font-size: 0.92rem; }
+  @media (max-width: 800px) { .subject-grid { grid-template-columns: 1fr; } }
+
+  .scope-sequence-row { max-width: var(--max); margin: 40px auto 0; padding: 20px var(--gutter); border-top: 1px solid var(--line); display: flex; justify-content: flex-end; }
+  .scope-sequence-row a { font-size: 0.82rem; color: var(--ink-faint); border-bottom: 1px dotted var(--ink-faint); }
+  .scope-sequence-row a:hover { color: var(--teal); border-color: var(--teal); }
+</style>
+</head>
+<body data-page="curriculum">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader"><div id="site-header"></div></header>
+
+<main id="main">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/0b00344d-64a6-49e9-8cc7-86fc8d6746bd/ICCRA_4" alt="">
+    <div class="page-hero-inner reveal">
+      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="programs.html">Programs</a> / Curriculum</p>
+      <h1>How instruction builds, grade by grade</h1>
+      <p class="page-hero-lead" id="curriculumIntro"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <p class="eyebrow">By Grade Band</p>
+      <h2>Foundations that grow with your student</h2>
+    </div>
+    <div class="band-list reveal" id="bandList"></div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="section-head reveal">
+      <p class="eyebrow">Grades 7 and Above</p>
+      <h2 id="advancedTitle"></h2>
+      <p class="section-lead" id="advancedDescription"></p>
+    </div>
+    <div class="advanced-track">
+      <div class="subject-grid reveal" id="advancedSubjects"></div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <svg class="cta-star" viewBox="0 0 200 200" aria-hidden="true"><use href="#khatam-star"></use></svg>
+    <div class="final-cta-inner reveal">
+      <p class="eyebrow eyebrow-light">Have Questions?</p>
+      <h2>Talk to admissions about your student's placement</h2>
+      <div class="hero-actions">
+        <a href="admissions.html" class="btn btn-white btn-lg">Start Admissions</a>
+        <a href="faq.html" class="btn btn-outline-light btn-lg">Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="scope-sequence-row">
+  <a id="scopeSequenceLink" href="#" target="_blank" rel="noopener">Scope &amp; Sequence (PDF) ↓</a>
+</div>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><g id="khatam-star"><path d="M100 10 L118 70 L180 55 L134 100 L180 145 L118 130 L100 190 L82 130 L20 145 L66 100 L20 55 L82 70 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></g></defs>
+</svg>
+
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initChrome('curriculum');
+  fetch('data/curriculum.json').then(r => r.json()).then(data => {
+    document.getElementById('curriculumIntro').textContent = data.intro;
+
+    document.getElementById('bandList').innerHTML = data.gradeBands.map(b => `
+      <div class="band-row">
+        <div class="band-head"><div class="range">${b.range}</div><div class="title">${b.title}</div></div>
+        <div class="band-col"><p class="label">Islamic Studies</p><p>${b.islamic}</p></div>
+        <div class="band-col"><p class="label">Academics</p><p>${b.academic}</p></div>
+      </div>
+    `).join('');
+
+    document.getElementById('advancedTitle').textContent = data.advancedTrack.title;
+    document.getElementById('advancedDescription').textContent = data.advancedTrack.description;
+    document.getElementById('advancedSubjects').innerHTML = data.advancedTrack.subjects.map(s => `
+      <div class="subject-card"><h3>${s.name}</h3><p>${s.description}</p></div>
+    `).join('');
+
+    document.getElementById('scopeSequenceLink').href = data.scopeAndSequence.href;
+    document.getElementById('scopeSequenceLink').textContent = data.scopeAndSequence.label + ' ↓';
+
+    initReveals();
+  });
+</script>
+</body>
+</html>

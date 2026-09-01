@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendar — ICCR Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="parents-community">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader"><div id="site-header"></div></header>
+
+<main id="main">
+  <section class="page-hero" style="padding-bottom: 60px;">
+    <img class="page-hero-bg" src="https://images.squarespace-cdn.com/content/v1/62e981ce5fdae74716e61f5f/014f8473-e9f3-478a-a723-13aa60b9e50e/ICCRA_2" alt="">
+    <div class="page-hero-inner reveal">
+      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="parents-community.html">Parents &amp; Community</a> / Calendar</p>
+      <h1>School Calendar</h1>
+      <p class="page-hero-lead">Key dates for the current school year, plus a subscribable digital calendar that stays in sync automatically.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="tabs reveal">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="panelSchool">School Calendar</button>
+        <button class="tab-btn" data-tab="panelDigital" id="digital">Digital Calendar</button>
+      </div>
+
+      <div class="tab-panel active" id="panelSchool">
+        <div class="content-block" style="padding:0; max-width: 100%;">
+          <ul>
+            <li>First day of school — late August</li>
+            <li>Fall break — mid-October</li>
+            <li>Winter break — late December through early January</li>
+            <li>Spring break — mid-March</li>
+            <li>Ramadan schedule adjustments — dates vary by lunar calendar</li>
+            <li>Last day of school — early June</li>
+          </ul>
+          <p style="color:var(--ink-faint); font-size:0.88rem;">Exact dates are confirmed each year and posted here as soon as they're finalized.</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panelDigital">
+        <div class="calendar-embed">
+          <p>Subscribe to the ICCRA calendar feed to see live updates in Google Calendar, Apple Calendar, or Outlook.<br><br><strong>webcal://calendar.crmosque.org/iccra.ics</strong></p>
+        </div>
+        <p style="margin-top:16px; color:var(--ink-soft); font-size:0.92rem;">Copy the link above into your calendar app's "subscribe by URL" option to keep ICCRA dates synced automatically.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initChrome('parents-community');
+  if (window.location.hash === '#digital') {
+    document.getElementById('digital').click();
+  }
+</script>
+</body>
+</html>
